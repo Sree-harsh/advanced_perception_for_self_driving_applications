@@ -1,0 +1,9 @@
+__pycache__
+*.pyc
+.idea
+.vscode
+.pyc
+lane_navigate/src/lane.avi
+*.pth
+*.mp4
+*.mp3

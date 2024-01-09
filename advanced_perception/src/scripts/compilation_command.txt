@@ -1,0 +1,2 @@
+time gcc point_cloud_filter.cpp -I/opt/ros/noetic/include/ -I/usr/include/pcl-1.10/ -I/usr/include/eigen3 -I//media/warlord/workspace/AONS/devel/include -L/opt/ros/noetic/lib -lroslib -lroscpp -lrosconsole -lroscpp_serialization -lrostime -lpcl_common -lpcl_io -lstdc++ -O3 -march=native -o point_cloud_filter
+

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+
+<launch>
+
+    <include file="$(find depth_image_proc)/launch/pcl_convert.launch"/>  <!-- Ros Nodelet to produce Point Cloud-->
+    <!-- <node name="lane_filterer" pkg="igvc_perception" type="point_cloud_filter"/> RosNode to filter out the black points -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find advanced_perception)/src/rviz/advanced_perception.rviz" />
+    <node name="lane_filterer" pkg="advanced_perception" type="point_cloud_filter"/>
+    <node name="costmap_generator" pkg="advanced_perception" type="costmap_generator.py"/>
+
+</launch>

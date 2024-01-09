@@ -1,0 +1,17 @@
+<launch>
+  <node pkg="nodelet" type="nodelet" name="nodelet_manager" args="manager" />
+  <arg name="rviz_file_name" default="present" />
+
+  
+  <node pkg="nodelet" type="nodelet" name="nodelet1" output="screen"
+        args="load depth_image_proc/point_cloud_xyzrgb nodelet_manager">
+
+    <remap from="/rgb/camera_info" to="/camera/depth_new/camera_info"/>
+    <remap from="/rgb/image_rect_color" to="/camera/color/lane_markers"/>
+    <remap from="depth_registered/image_rect" to="/camera/depth_new/camera_depth"/> 
+    
+    <!-- ##OUTPUT -->
+    <remap from="depth_registered/points" to="/camera/depth/points_marked"/>
+  </node>
+
+</launch>
